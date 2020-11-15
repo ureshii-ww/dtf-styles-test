@@ -4,6 +4,8 @@
 @version        1.0.0
 @description    💗💗💗
 @author         Ureshii 死者
+
+@var            checkbox  scroll  "Скролл" 1
 ==/UserStyle== */
 
 @-moz-document domain("dtf.ru"), domain("tjournal.ru"), domain("vc.ru") {
@@ -2570,4 +2572,4 @@ html[stylus-iframe*="dtf.ru"] .PrimaryCTA,
 html[stylus-iframe*="dtf.ru"] .Footer {
     border-color: var(--text-color-minor);
 }
-}
+}}
