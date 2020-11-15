@@ -5,8 +5,6 @@
 @description    💗💗💗
 @author         Ureshii 死者
 @preprocessor stylus
-
-@var            checkbox  scroll  "Скролл" 1
 ==/UserStyle== */
 
 @-moz-document domain("dtf.ru"), domain("tjournal.ru"), domain("vc.ru") {
@@ -2348,11 +2346,6 @@ a.v-list__item:hover,
 
 .hljs-strong {
     font-weight: bold;
-}
-
-if scroll {
-    ::-webkit-scrollbar {}
-}
 }
 
 @-moz-document domain("vc.ru") {
