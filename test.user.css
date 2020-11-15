@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           DTF Nocturne Test
 @namespace      github.com/openstyles/stylus
-@version        1.0.1
+@version        1.0.2
 @description    💗💗💗
 @author         Ureshii 死者
 @preprocessor stylus
 
-@var            checkbox  scroll  "Скролл" 1
+@var            checkbox  scrollbar  "Перекрасить скроллбар" 1
 ==/UserStyle== */
 
 @-moz-document domain("dtf.ru"), domain("tjournal.ru"), domain("vc.ru") {
@@ -2350,36 +2350,22 @@ a.v-list__item:hover,
     font-weight: bold;
 }
 
-if scroll{
-    ::-webkit-scrollbar{
-        width:12px;
-        background-color:#292929;
-    }
-    ::-webkit-scrollbar:horizontal{
-        height:12px;
-    }
-    ::-webkit-scrollbar-track{
-        border:1px #292929 solid;
-        border-radius:0px;
-        -webkit-box-shadow:0 0 6px #292929 inset;
-    }
-    ::-webkit-scrollbar-thumb{
-        background-color:#000000;
-        border:1px solid #000000;
-        border-radius:0px;
-    }
-    ::-webkit-scrollbar-thumb:hover{
-        background-color:#bfbfbf;
-        border:1px solid #bfbfbf;
-    }
-    ::-webkit-scrollbar-thumb:active{
-        background-color:#bfbfbf;
-        border:1px solid #bfbfbf;
-    }
-    ::-webkit-scrollbar-corner{
-        background-color:#292929;
-    }
+if scrollbar {
+    ::-webkit-scrollbar
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    width: 12px;
+    background-color: #333437;
 }
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+}
+
 }
 
 @-moz-document domain("vc.ru") {
@@ -2552,57 +2538,101 @@ if scroll{
 }
 
 html[stylus-iframe*="dtf.ru"] body,
+html[stylus-iframe*="tjournal.ru"] body,
+html[stylus-iframe*="vc.ru"] body,
 html[stylus-iframe*="dtf.ru"] .AvatarContainer,
-html[stylus-iframe*="dtf.ru"] .PrimaryCTA {
+html[stylus-iframe*="tjournal.ru"] .AvatarContainer,
+html[stylus-iframe*="vc.ru"] .AvatarContainer,
+html[stylus-iframe*="dtf.ru"] .PrimaryCTA,
+html[stylus-iframe*="tjournal.ru"] .PrimaryCTA,
+html[stylus-iframe*="vc.ru"] .PrimaryCTA {
     background-color: var(--color-04ev) !important;
 }
 
-html[stylus-iframe*="dtf.ru"] .HoverCard .HoverCardRoot {
+html[stylus-iframe*="dtf.ru"] .HoverCard .HoverCardRoot,
+html[stylus-iframe*="tjournal.ru"] .HoverCard .HoverCardRoot,
+html[stylus-iframe*="vc.ru"] .HoverCard .HoverCardRoot {
     background-color: var(--color-06ev);
 }
 
 html[stylus-iframe*="dtf.ru"] .UsernameText,
+html[stylus-iframe*="tjournal.ru"] .UsernameText,
+html[stylus-iframe*="vc.ru"] .UsernameText,
 html[stylus-iframe*="dtf.ru"] .PrimaryCTA a,
+html[stylus-iframe*="tjournal.ru"] .PrimaryCTA a,
+html[stylus-iframe*="vc.ru"] .PrimaryCTA a,
 html[stylus-iframe*="dtf.ru"] .SocialProof a,
-html[stylus-iframe*="dtf.ru"] .HoverCardUserName .Username {
+html[stylus-iframe*="tjournal.ru"] .SocialProof a,
+html[stylus-iframe*="vc.ru"] .SocialProof a,
+html[stylus-iframe*="dtf.ru"] .HoverCardUserName .Username,
+html[stylus-iframe*="tjournal.ru"] .HoverCardUserName .Username,
+html[stylus-iframe*="vc.ru"] .HoverCardUserName .Username {
     color: var(--text-color-title);
 }
 
 html[stylus-iframe*="dtf.ru"] .FollowerCountText,
+html[stylus-iframe*="tjournal.ru"] .FollowerCountText,
+html[stylus-iframe*="vc.ru"] .FollowerCountText,
 html[stylus-iframe*="dtf.ru"] .HoverCardStatus span,
-html[stylus-iframe*="dtf.ru"] a.CommentInput {
+html[stylus-iframe*="tjournal.ru"] .HoverCardStatus span,
+html[stylus-iframe*="vc.ru"] .HoverCardStatus span,
+html[stylus-iframe*="dtf.ru"] a.CommentInput,
+html[stylus-iframe*="tjournal.ru"] a.CommentInput,
+html[stylus-iframe*="vc.ru"] a.CommentInput {
     color: var(--text-color-minor);
 }
 
-html[stylus-iframe*="dtf.ru"] .UsernameText:hover {
+html[stylus-iframe*="dtf.ru"] .UsernameText:hover,
+html[stylus-iframe*="tjournal.ru"] .UsernameText:hover,
+html[stylus-iframe*="vc.ru"] .UsernameText:hover {
     color: var(--text-color-blue);
 }
 
 html[stylus-iframe*="dtf.ru"] a.ViewProfileButton,
-html[stylus-iframe*="dtf.ru"] a.FollowButton {
+html[stylus-iframe*="tjournal.ru"] a.ViewProfileButton,
+html[stylus-iframe*="vc.ru"] a.ViewProfileButton,
+html[stylus-iframe*="dtf.ru"] a.FollowButton,
+html[stylus-iframe*="tjournal.ru"] a.FollowButton,
+html[stylus-iframe*="vc.ru"] a.FollowButton {
     background-color: var(--back-color-blue-button);
 }
 
 html[stylus-iframe*="dtf.ru"] a.ViewProfileButton:hover,
-html[stylus-iframe*="dtf.ru"] a.FollowButton:hover {
+html[stylus-iframe*="tjournal.ru"] a.ViewProfileButton:hover,
+html[stylus-iframe*="vc.ru"] a.ViewProfileButton:hover,
+html[stylus-iframe*="dtf.ru"] a.FollowButton:hover,
+html[stylus-iframe*="tjournal.ru"] a.FollowButton:hover,
+html[stylus-iframe*="vc.ru"] a.FollowButton:hover {
     background-color: var(--blue-button-hover);
 }
 
-html[stylus-iframe*="dtf.ru"] a:active {
+html[stylus-iframe*="dtf.ru"] a:active,
+html[stylus-iframe*="tjournal.ru"] a:active,
+html[stylus-iframe*="vc.ru"] a:active {
     opacity: 1;
 }
 
-html[stylus-iframe*="dtf.ru"] .VerifiedSprite {
+html[stylus-iframe*="dtf.ru"] .VerifiedSprite,
+html[stylus-iframe*="tjournal.ru"] .VerifiedSprite,
+html[stylus-iframe*="vc.ru"] .VerifiedSprite {
     filter: hue-rotate(370deg) brightness(130%) saturate(40%)
 }
 
 html[stylus-iframe*="dtf.ru"] .Feedback a,
-html[stylus-iframe*="dtf.ru"] .Glyph {
+html[stylus-iframe*="tjournal.ru"] .Feedback a,
+html[stylus-iframe*="vc.ru"] .Feedback a,
+html[stylus-iframe*="dtf.ru"] .Glyph,
+html[stylus-iframe*="tjournal.ru"] .Glyph,
+html[stylus-iframe*="vc.ru"] .Glyph {
     filter: invert(1) opacity(69%);
 }
 
 html[stylus-iframe*="dtf.ru"] .PrimaryCTA,
-html[stylus-iframe*="dtf.ru"] .Footer {
+html[stylus-iframe*="tjournal.ru"] .PrimaryCTA,
+html[stylus-iframe*="vc.ru"] .PrimaryCTA,
+html[stylus-iframe*="dtf.ru"] .Footer,
+html[stylus-iframe*="tjournal.ru"] .Footer,
+html[stylus-iframe*="vc.ru"] .Footer {
     border-color: var(--text-color-minor);
 }
 }
