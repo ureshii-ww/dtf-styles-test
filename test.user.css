@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DTF Nocturne Test
 @namespace      github.com/openstyles/stylus
-@version        1.0.3
+@version        1.0.4
 @description    💗💗💗
 @author         Ureshii 死者
 @preprocessor stylus
@@ -2392,7 +2392,8 @@ if scrollbar {
 .sidebar__footer__item--sponsor span,
 .v-tab--active .v-tab__label::after,
 .quiz__item__progressbar__runner,
-.quiz__item__progressbar {
+.quiz__item__progressbar,
+.ui-tab--active .ui-tab__label:after {
     background-color: var(--site-color) !important;
 }
 
@@ -2474,7 +2475,8 @@ if scrollbar {
 .sidebar__footer__item--sponsor span,
 .v-tab--active .v-tab__label::after,
 .quiz__item__progressbar__runner,
-.quiz__item__progressbar {
+.quiz__item__progressbar,
+.ui-tab--active .ui-tab__label:after {
     background-color: var(--site-color) !important;
 }
 
