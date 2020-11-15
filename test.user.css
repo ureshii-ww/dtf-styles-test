@@ -4,6 +4,7 @@
 @version        1.0.0
 @description    💗💗💗
 @author         Ureshii 死者
+@preprocessor stylus
 
 @var            checkbox  scroll  "Скролл" 1
 ==/UserStyle== */
@@ -2348,6 +2349,7 @@ a.v-list__item:hover,
 .hljs-strong {
     font-weight: bold;
 }
+}
 
 @-moz-document domain("vc.ru") {
 :root {
@@ -2572,4 +2574,4 @@ html[stylus-iframe*="dtf.ru"] .PrimaryCTA,
 html[stylus-iframe*="dtf.ru"] .Footer {
     border-color: var(--text-color-minor);
 }
-}}
+}
