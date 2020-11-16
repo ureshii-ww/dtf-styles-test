@@ -1,14 +1,13 @@
 /* ==UserStyle==
 @name           DTF Nocturne Test
 @namespace      github.com/openstyles/stylus
-@version        1.0.7
+@version        1.0.8
 @description    💗💗💗
 @author         Ureshii 死者
 @preprocessor stylus
 @var            checkbox  scrollbar  "Перекрасить скроллбар" 1
 @var            checkbox  likeButtons "Вернуть кнопки лайков" 1
- */
-==/UserStyle== */
+==UserStyle== */
 
 @-moz-document domain("dtf.ru"), domain("tjournal.ru"), domain("vc.ru") {
 :root {
