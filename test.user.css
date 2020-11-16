@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DTF Nocturne Test
 @namespace      github.com/openstyles/stylus
-@version        1.0.5
+@version        1.0.6
 @description    💗💗💗
 @author         Ureshii 死者
 @prepocessor stylus
@@ -2362,19 +2362,18 @@ a.v-list__item:hover,
 }
 
 
-if scroll{
-::-webkit-scrollbar {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    width: 12px;
-    background-color: #333437;
-}
+if scroll
+    ::-webkit-scrollbar {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        width: 12px;
+        background-color: #333437;
+    }
 
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
-}
-}
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #555;
+    }
 
 }
 
