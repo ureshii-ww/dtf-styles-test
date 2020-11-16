@@ -7,7 +7,7 @@
 @preprocessor stylus
 @var            checkbox  scrollbar  "Перекрасить скроллбар" 1
 @var            checkbox  likeButtons "Вернуть кнопки лайков" 1
-==UserStyle== */
+==/UserStyle== */
 
 @-moz-document domain("dtf.ru"), domain("tjournal.ru"), domain("vc.ru") {
 :root {
