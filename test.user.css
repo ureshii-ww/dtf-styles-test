@@ -563,7 +563,7 @@ announcement-stats,
 .inline-dropdown,
 .inline-dropdown__found-item--hashtag::before,
 .audio_player__control__mute,
-.audio_player__control__rate.
+.audio_player__control__rate,
 .v-shares-popover__icon {
     color: var(--text-color-gray) !important;
 }
