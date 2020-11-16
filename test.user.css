@@ -2362,8 +2362,8 @@ a.v-list__item:hover,
 }
 
 
-
-    ::-webkit-scrollbar {
+if scroll{
+::-webkit-scrollbar {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     width: 12px;
     background-color: #333437;
@@ -2374,6 +2374,8 @@ a.v-list__item:hover,
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
 }
+}
+
 }
 
 @-moz-document domain("vc.ru") {
