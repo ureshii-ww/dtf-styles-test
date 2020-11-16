@@ -4,8 +4,8 @@
 @version        1.0.5
 @description    💗💗💗
 @author         Ureshii 死者
-
-@prepocessor default
+@prepocessor stylus
+@var            checkbox  scrollbar  "Перекрасить скроллбар" 1
 ==/UserStyle== */
 
 @-moz-document domain("dtf.ru"), domain("tjournal.ru"), domain("vc.ru") {
@@ -233,7 +233,8 @@ body {
 .v-button,
 .v-tabs-navigation,
 .v-header-avatar-manage,
-.tg-tooltip {
+.tg-tooltip,
+.vote--content .vote__button {
     background-color: var(--color-03ev) !important;
 }
 
@@ -268,8 +269,7 @@ body {
 .tab__content,
 .shares--mobile .shares__open,
 .shares--open .shares__close,
-.events_widget__new, 
-.vote--content .vote__button {
+.events_widget__new {
     background-color: var(--color-02ev) !important;
 }
 
@@ -405,7 +405,11 @@ body {
 
 .attachButton:hover,
 .email_subscribe_vue__form,
-.email_subscribe_vue__form input {
+.email_subscribe_vue__form input,
+.vote--content .vote__button--minus:hover,
+.vote--content.vote--voted-negative .vote__button--minus,
+.vote--content.vote--voted-positive .vote__button--plus,
+.vote--content .vote__button--plus:hover {
     background-color: var(--hover-03ev) !important;
 }
 
@@ -423,10 +427,7 @@ body {
 .chat-info-form__picture,
 .chat-info-form .ui-input,
 .chat-info__search .user,
-.popup__container__window .select__current,
-.vote--content .vote__button--minus:hover,
-.vote--content.vote--voted-negative .vote__button--minus,
-.vote--content.vote--voted-negative .vote__button--minus, .vote--content.vote--voted-positive .vote__button--plus {
+.popup__container__window .select__current {
     background-color: var(--hover-02ev) !important;
 }
 
@@ -2361,6 +2362,7 @@ a.v-list__item:hover,
 }
 
 
+if scroll {
     ::-webkit-scrollbar {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     width: 12px;
@@ -2371,6 +2373,7 @@ a.v-list__item:hover,
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
+}
 }
 
 }
