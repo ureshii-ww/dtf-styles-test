@@ -1,13 +1,14 @@
 /* ==UserStyle==
 @name           DTF Nocturne Test
 @namespace      github.com/openstyles/stylus
-@version        1.0.9
+@version        1.0.10
 @description    💗💗💗
 @author         Ureshii 死者
 @preprocessor stylus
 @var            checkbox  scrollbar  "Перекрасить скроллбар" 1
 @var            checkbox  likeButtons "Вернуть кнопки лайков" 1
 @var            checkbox  noTitle "Уменьшить шрифт у постов без заголовка в ленте" 0
+@var            checkbox  alternativePost "Альтернативный вид поста в ленте (экспериментальная функция)" 0
 ==/UserStyle== */
 
 @-moz-document domain("dtf.ru"), domain("tjournal.ru"), domain("vc.ru") {
@@ -271,7 +272,8 @@ body {
 .tab__content,
 .shares--mobile .shares__open,
 .shares--open .shares__close,
-.events_widget__new {
+.events_widget__new,
+.v-shares-mobile-popover__list {
     background-color: var(--color-02ev) !important;
 }
 
@@ -312,7 +314,11 @@ body {
 .widget_wrapper--type-pink,
 .events_widget,
 .island--company_entries,
-.layout__left-column {
+.layout__left-column,
+.content-header__subscribe .ui-button,
+.content-header__subscribe .ui-button:hover,
+.entry_stub,
+.v-popup-window--gray .v-popup-window__content {
     background-color: var(--color-01ev) !important;
 }
 
@@ -567,7 +573,9 @@ announcement-stats,
 .inline-dropdown__found-item--hashtag::before,
 .audio_player__control__mute,
 .audio_player__control__rate,
-.v-shares-popover__icon {
+.v-shares-popover__icon,
+.v-shares-mobile-popover__list,
+.v-shares-mobile-popover__icon {
     color: var(--text-color-gray) !important;
 }
 
@@ -725,7 +733,9 @@ attachButton:hover,
 .events_widget__title,
 .events_widget__item__title,
 .island--company_entries .island__header__title,
-.island--company_entries .company_entries__title, .content-title {
+.island--company_entries .company_entries__title,
+.content-title,
+.v-shares-mobile-popover__name {
     color: var(--text-color-title) !important;
 }
 
@@ -857,7 +867,8 @@ attachButton:hover,
 .andropov_preview--link .andropov_preview__hostname,
 .content__updating, 
 .content-info, 
-.v-shares__button {
+.v-shares__button,
+.entry_stub__option[data-state="2"] {
     color: var(--text-color-minor) !important;
 }
 
@@ -1042,7 +1053,11 @@ a.v-list__item:hover,
 .audio_player__control__rate:hover,
 .audio_player__control__mute:hover,
 .audio_player__control__volume:hover, 
-.v-shares__button:hover {
+.v-shares__button:hover,
+.content-header__subscribe .ui-button,
+.content-header__subscribe .ui-button .icon,
+.entry_stub__button,
+.repost_button__button--active {
     color: var(--text-color-blue) !important;
 }
 
@@ -1110,7 +1125,8 @@ a.v-list__item:hover,
 .form2__field--advanced_list .advanced_list__list .adv_list_item a:hover,
 .v-list__label a:hover,
 .andropov_telegram__text__more:hover,
-.andropov_tweet__text__more:hover {
+.andropov_tweet__text__more:hover,
+.v-number-change--negative {
     color: var(--text-color-red) !important;
 }
 
@@ -2393,6 +2409,93 @@ if likeButtons{
         background-color: var(--color-01ev) !important;
         box-shadow: none !important;
         -webkit-box-shadow: none !important;
+    }
+}
+
+if alternativePost{
+    .content-feed {
+    display: grid;
+    grid-template-areas:
+        "repost"
+        "header1"
+        "content"
+        "footer";
+    }
+
+    .content-header-repost {
+        grid-area: repost;
+    }
+
+    .content-feed .content-header {
+        grid-area: header1;
+    }
+
+    .content-feed .content-info {
+        grid-area: header1;
+        margin: 0;
+    }
+
+    .content-feed .content {
+        grid-area: content;
+    }
+
+    .content-feed .content-footer {
+        grid-area: footer;
+    }
+
+    .content-header--short {
+        margin-bottom: 13px;
+    }
+
+    .content-info--short {
+        padding-top: 16px;
+        padding-bottom: 11px;
+        padding-right: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 15px;
+    }
+
+    .content-info--short .time {
+        padding-right: 72px;
+    }
+
+    .content-header-repost, .content-header--short {
+        padding-top: 16px;
+    }
+
+    .content-header-repost {
+        font-size: 12px;
+    }
+
+    .content-header-repost .icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+
+    .content-title--short {
+        margin-top: 0;
+    }
+
+    .content-footer--short {
+        margin-top: 13px;
+    }
+
+    .content-info--short .views {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .content-info--short .views {
+        display: none;
+    }
+
+    @media (max-width: 420px) {
+        .content-info--short {
+            display: none;
+        }
     }
 }
 }
