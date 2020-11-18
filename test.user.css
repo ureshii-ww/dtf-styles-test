@@ -2416,10 +2416,7 @@ if alternativePost{
     .content-feed {
         display: grid;
         grid-template-areas:
-            "repost"
-            "header1"
-            "content"
-            "footer";
+            "repost""header1""content""footer";
     }
 
     .content-header-repost {
