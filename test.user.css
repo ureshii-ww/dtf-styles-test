@@ -2489,6 +2489,11 @@ if alternativePost{
         display: none;
     }
 
+    .content-header--short .content-header__subscribe {
+        padding-right: 72px;
+        margin-top: 0;
+    }
+
     @media (max-width: 420px) {
         .content-info--short {
             display: none;
