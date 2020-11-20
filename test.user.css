@@ -1,14 +1,13 @@
 /* ==UserStyle==
 @name           DTF Nocturne Test
 @namespace      github.com/openstyles/stylus
-@version        1.0.11
+@version        1.0.12
 @description    💗💗💗
 @author         Ureshii 死者
 @preprocessor stylus
 @var            checkbox  scrollbar  "Перекрасить скроллбар" 1
-@var            checkbox  likeButtons "Вернуть кнопки лайков" 1
 @var            checkbox  noTitle "Уменьшить шрифт у постов без заголовка в ленте" 0
-@var            checkbox  alternativePost "Альтернативный вид поста в ленте (экспериментальная функция)" 0
+@var            checkbox  alternativePost "Уменьшить сообщение о репосте" 0
 ==/UserStyle== */
 
 @-moz-document domain("dtf.ru"), domain("tjournal.ru"), domain("vc.ru") {
@@ -236,8 +235,7 @@ body {
 .v-button,
 .v-tabs-navigation,
 .v-header-avatar-manage,
-.tg-tooltip,
-.vote--content .vote__button {
+.tg-tooltip {
     background-color: var(--color-03ev) !important;
 }
 
@@ -413,11 +411,7 @@ body {
 
 .attachButton:hover,
 .email_subscribe_vue__form,
-.email_subscribe_vue__form input,
-.vote--content .vote__button--minus:hover,
-.vote--content.vote--voted-negative .vote__button--minus,
-.vote--content.vote--voted-positive .vote__button--plus,
-.vote--content .vote__button--plus:hover {
+.email_subscribe_vue__form input {
     background-color: var(--hover-03ev) !important;
 }
 
@@ -456,7 +450,8 @@ body {
 .email_subscribe_form__input,
 .ui_select,
 .ui_select select,
-.gallery-image--with-background .gallery-image__media {
+.gallery-image--with-background .gallery-image__media,
+.v-header-avatar {
     background-color: var(--hover-01ev) !important;
 }
 
@@ -575,7 +570,8 @@ announcement-stats,
 .audio_player__control__rate,
 .v-shares-popover__icon,
 .v-shares-mobile-popover__list,
-.v-shares-mobile-popover__icon {
+.v-shares-mobile-popover__icon,
+.chat-form__reply-text {
     color: var(--text-color-gray) !important;
 }
 
@@ -735,7 +731,8 @@ attachButton:hover,
 .island--company_entries .island__header__title,
 .island--company_entries .company_entries__title,
 .content-title,
-.v-shares-mobile-popover__name {
+.v-shares-mobile-popover__name,
+.chat-form__reply-name {
     color: var(--text-color-title) !important;
 }
 
@@ -868,7 +865,8 @@ attachButton:hover,
 .content__updating, 
 .content-info, 
 .v-shares__button,
-.entry_stub__option[data-state="2"] {
+.entry_stub__option[data-state="2"],
+.profile_comment_favorite__expand {
     color: var(--text-color-minor) !important;
 }
 
@@ -1057,7 +1055,8 @@ a.v-list__item:hover,
 .content-header__subscribe .ui-button,
 .content-header__subscribe .ui-button .icon,
 .entry_stub__button,
-.repost_button__button--active {
+.repost_button__button--active,
+.profile_comment_favorite__expand:hover {
     color: var(--text-color-blue) !important;
 }
 
@@ -2047,7 +2046,8 @@ if noTitle{
 .sitemap a,
 .subsite_card_simple__description a,
 .subsite_head__description a,
-.t-link-classic {
+.t-link-classic,
+.profile_comment_favorite__expand:hover {
     border-color: var(--text-color-blue);
 }
 
@@ -2112,6 +2112,10 @@ if noTitle{
 
 .ui-button--4::after {
     border-bottom-color: var(--text-color-minor);
+}
+
+.profile_comment_favorite__expand {
+    border-color: var(--text-color-minor);
 }
 /******************************************************************/
 /* Messenger */
@@ -2313,6 +2317,10 @@ if noTitle{
 .ad-contacts__user:after {
     background: none;
 }
+
+#notify .notify__item--error {
+    border-left-color: var(--text-color-red) !important;
+}
 /*******************************************************************************************************************/
 /******* HLJS THEME FOR BLOCK CODE *******/
 .hljs-comment,
@@ -2400,68 +2408,7 @@ if scrollbar{
     }
 }
 
-if likeButtons{
-    .vote--content .vote__button, 
-    .vote--content .vote__button--minus:hover,
-    .vote--content.vote--voted-negative .vote__button--minus,
-    .vote--content.vote--voted-positive .vote__button--plus,
-    .vote--content .vote__button--plus:hover {
-        background-color: var(--color-01ev) !important;
-        box-shadow: none !important;
-        -webkit-box-shadow: none !important;
-    }
-}
-
 if alternativePost{
-    .content-feed {
-        display: grid;
-        grid-template-areas:
-            "repost""header1""content""footer";
-    }
-
-    .content-header-repost {
-        grid-area: repost;
-    }
-
-    .content-feed .content-header {
-        grid-area: header1;
-    }
-
-    .content-feed .content-info {
-        grid-area: header1;
-        margin: 0;
-    }
-
-    .content-feed .content {
-        grid-area: content;
-    }
-
-    .content-feed .content-footer {
-        grid-area: footer;
-    }
-
-    .content-header--short {
-        margin-bottom: 13px;
-    }
-
-    .content-info--short {
-        padding-top: 16px;
-        padding-bottom: 11px;
-        padding-right: 72px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        font-size: 15px;
-    }
-
-    .content-info--short .time {
-        padding-right: 72px;
-    }
-
-    .content-header-repost, .content-header--short {
-        padding-top: 16px;
-    }
-
     .content-header-repost {
         font-size: 12px;
     }
@@ -2470,34 +2417,6 @@ if alternativePost{
         width: 16px;
         height: 16px;
         margin-right: 5px;
-    }
-
-    .content-title--short {
-        margin-top: 0;
-    }
-
-    .content-footer--short {
-        margin-top: 13px;
-    }
-
-    .content-info--short .views {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-
-    .content-info--short .views {
-        display: none;
-    }
-
-    .content-header--short .content-header__subscribe {
-        padding-right: 72px;
-        margin-top: 0;
-    }
-
-    @media (max-width: 420px) {
-        .content-info--short {
-            display: none;
-        }
     }
 }
 }
