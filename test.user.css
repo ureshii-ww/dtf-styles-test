@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DTF Nocturne Test
 @namespace      github.com/openstyles/stylus
-@version        1.0.17
+@version        1.0.18
 @description    💗💗💗
 @author         Ureshii 死者, helped by selpast
 @preprocessor stylus
@@ -2539,16 +2539,20 @@ if standardSidebars {
         background-color: var(--color-00ev) !important;
     }
 
-    .sidebar-tree-list-item--active,
-    .sidebar-tree-list-item--active:hover {
-        background-color: var(--color-01ev) !important;
-    }
-
     .sidebar-tree-list-item:hover,
     .u-notification--blue.u-notification--bg,
     .u-notification--green.u-notification--bg,
     .u-notification--red.u-notification--bg {
         background-color: var(--hover-00ev) !important;
+    }
+
+    .sidebar-tree-list-item--active,
+    .sidebar-tree-list-item:hover .sidebar-tree-list-item--active {
+        background-color: var(--color-01ev) !important;
+    }
+
+    .sidebar-tree-list-item__child-item:hover {
+        background-color: var(--hover-01ev) !important;
     }
 
     @media (max-width: 1560px) and (min-width: 860px) {
