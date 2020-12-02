@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DTF Nocturne Test
 @namespace      github.com/openstyles/stylus
-@version        1.0.16
+@version        1.0.17
 @description    💗💗💗
 @author         Ureshii 死者, helped by selpast
 @preprocessor stylus
@@ -2534,7 +2534,8 @@ if likesBack{
 if standardSidebars {
     .sidebar,
     .live,
-    .sidebar-tree-list__show-more-button  {
+    .sidebar-tree-list__show-more-button,
+    .layout__left-column  {
         background-color: var(--color-00ev) !important;
     }
 
