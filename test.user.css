@@ -1,13 +1,15 @@
 /* ==UserStyle==
-@name           DTF Nocturne Test
+@name           DTF Nocturne
 @namespace      github.com/openstyles/stylus
-@version        1.0.12
+@version        1.0.13
 @description    💗💗💗
-@author         Ureshii 死者
+@author         Ureshii 死者, helped by selpast
 @preprocessor stylus
+@var            checkbox  likesBack "Убрать фон у лайков" 1
 @var            checkbox  scrollbar  "Перекрасить скроллбар" 1
 @var            checkbox  noTitle "Уменьшить шрифт у постов без заголовка в ленте" 0
 @var            checkbox  alternativePost "Уменьшить сообщение о репосте" 0
+@var            checkbox  messagesScroll "Скроллбар в мессенджере" 0
 ==/UserStyle== */
 
 @-moz-document domain("dtf.ru"), domain("tjournal.ru"), domain("vc.ru") {
@@ -125,7 +127,8 @@ body {
 .herzen__command_list,
 .andropov_preview,
 .repost_button__list .bubble .item,
-.v-shares-popover {
+.v-shares-popover,
+.tjnames__list, .tjnames__list.active {
     background-color: var(--color-08ev) !important;
 }
 
@@ -214,7 +217,8 @@ body {
 .inline-dropdown,
 .head-notifies__items-wrapper,
 .messenger-panel__down-list,
-.audio_player__control__panel {
+.audio_player__control__panel,
+.etc-controls__dropdown {
     background-color: var(--color-04ev) !important;
 }
 
@@ -271,12 +275,11 @@ body {
 .shares--mobile .shares__open,
 .shares--open .shares__close,
 .events_widget__new,
-.v-shares-mobile-popover__list {
+.v-shares-mobile-popover__list,
+.v-form-card .v-form-input input {
     background-color: var(--color-02ev) !important;
 }
 
-.sidebar,
-.live,
 .l-island-bg,
 .new_entries,
 .ui-rounded-button__link,
@@ -316,7 +319,10 @@ body {
 .content-header__subscribe .ui-button,
 .content-header__subscribe .ui-button:hover,
 .entry_stub,
-.v-popup-window--gray .v-popup-window__content {
+.v-popup-window--gray .v-popup-window__content,
+.v-popup-window__content,
+.v-form__legal:before,
+.search_results__horizon {
     background-color: var(--color-01ev) !important;
 }
 
@@ -362,7 +368,8 @@ body {
 .v-form-input input,
 .herzen__command_list__item--selected,
 .herzen__command_list__item:hover,
-.v-shares-popover__item:hover {
+.v-shares-popover__item:hover,
+.thesis__attach_something:hover {
     background-color: var(--hover-08ev) !important;
 }
 
@@ -411,7 +418,10 @@ body {
 
 .attachButton:hover,
 .email_subscribe_vue__form,
-.email_subscribe_vue__form input {
+.email_subscribe_vue__form input,
+.comments__item__space--pinned .andropov_link,
+.comments__item__space--new .andropov_link,
+.comments__item__space--highlighted .andropov_link {
     background-color: var(--hover-03ev) !important;
 }
 
@@ -429,7 +439,8 @@ body {
 .chat-info-form__picture,
 .chat-info-form .ui-input,
 .chat-info__search .user,
-.popup__container__window .select__current {
+.popup__container__window .select__current,
+.ui_modal_window--unpublish textarea {
     background-color: var(--hover-02ev) !important;
 }
 
@@ -451,7 +462,9 @@ body {
 .ui_select,
 .ui_select select,
 .gallery-image--with-background .gallery-image__media,
-.v-header-avatar {
+.v-header-avatar,
+.popup__content--misprint .selected_text span,
+.v-popup-window__cover {
     background-color: var(--hover-01ev) !important;
 }
 
@@ -571,7 +584,11 @@ announcement-stats,
 .v-shares-popover__icon,
 .v-shares-mobile-popover__list,
 .v-shares-mobile-popover__icon,
-.chat-form__reply-text {
+.chat-form__reply-text,
+.ui_modal_window--unpublish textarea,
+.sidebar-tree-list-item--colored,
+.v-receipt,
+.v-message__text {
     color: var(--text-color-gray) !important;
 }
 
@@ -597,7 +614,6 @@ announcement-stats,
 .widget_comment__entry,
 .widget_wrapper__more,
 .blogs_entries__load_more,
-.widget_comment__label,
 .island--blogs_entries .blogs_entries__title,
 .content-header-author__name,
 .daily-promo-unit__title,
@@ -732,7 +748,11 @@ attachButton:hover,
 .island--company_entries .company_entries__title,
 .content-title,
 .v-shares-mobile-popover__name,
-.chat-form__reply-name {
+.chat-form__reply-name,
+.content__thanks a:hover span,
+.tjnames__list b,
+.v-form__title,
+.v-message__title {
     color: var(--text-color-title) !important;
 }
 
@@ -866,7 +886,14 @@ attachButton:hover,
 .content-info, 
 .v-shares__button,
 .entry_stub__option[data-state="2"],
-.profile_comment_favorite__expand {
+.profile_comment_favorite__expand,
+.comment-unspy-button .material-icons,
+.v-date__main,
+.audio_listen_button,
+.v-form-card .v-form-input input::placeholder,
+.v-form__legal,
+.v-date__expires,
+.widget_comment__label {
     color: var(--text-color-minor) !important;
 }
 
@@ -1056,7 +1083,11 @@ a.v-list__item:hover,
 .content-header__subscribe .ui-button .icon,
 .entry_stub__button,
 .repost_button__button--active,
-.profile_comment_favorite__expand:hover {
+.profile_comment_favorite__expand:hover,
+.audio_listen_button:hover,
+.v-form__legal a,
+.etc_control--open,
+.t-link-site {
     color: var(--text-color-blue) !important;
 }
 
@@ -1067,7 +1098,6 @@ a.v-list__item:hover,
 .vote__button--minus:hover,
 .vote .vote__users__item--minus,
 .favorite_marker--active .favorite_marker__count,
-.content__thanks a:hover span,
 .subsites_tune__select-all:hover,
 .t-link-inline:hover,
 .auth-form__help:hover,
@@ -1125,7 +1155,9 @@ a.v-list__item:hover,
 .v-list__label a:hover,
 .andropov_telegram__text__more:hover,
 .andropov_tweet__text__more:hover,
-.v-number-change--negative {
+.v-number-change--negative,
+.v-form__legal a:hover,
+.t-link-site:hover {
     color: var(--text-color-red) !important;
 }
 
@@ -1141,7 +1173,8 @@ a.v-list__item:hover,
 .chat-header-info .online,
 .subsite_subscribe_button .icon--ui_check,
 .subsite__trend .icon--ui_arrow_up,
-.ui-button--success .icon {
+.ui-button--success .icon,
+.v-message__title .icon--ui_check {
     color: var(--text-color-green) !important;
 }
 
@@ -1244,7 +1277,8 @@ a.v-list__item:hover,
 .form2__field--text .text,
 .form2__field--advanced_list .text__input,
 .form2__field--advanced_list .advanced_list__list,
-.form2__field--sticky {
+.form2__field--sticky,
+.tjnames__list, .tjnames__list.active {
     border: none !important;
 }
 
@@ -1269,7 +1303,8 @@ a.v-list__item:hover,
 #notify .notify__item,
 .inline-dropdown,
 .m-floating,
-.v-shares-popover {
+.v-shares-popover,
+.tjnames__list, .tjnames__list.active {
     --webkit-box-shadow: 0 0.3px 2.2px rgba(18, 18, 18, 0.02),
     0 0.7px 5.3px rgba(18, 18, 18, 0.028),
     0 1.3px 10px rgba(18, 18, 18, 0.035),
@@ -1689,6 +1724,10 @@ if noTitle{
     background-color: var(--border-color-dim) !important;
 }
 
+.v-table__row:not(:last-child) {
+    border-color: var(--color-01ev);
+}
+
 .tg-grid__section {
     border-bottom: 1px solid var(--border-color);
 }
@@ -1925,6 +1964,11 @@ if noTitle{
     background-image: linear-gradient(to left, var(--color-04ev), rgba(255, 255, 255, 0));
 }
 
+.text_loop__grd--l {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--color-04ev)), to(rgba(255, 255, 255, 0)));
+    background-image: linear-gradient(to right, var(--color-04ev), rgba(255, 255, 255, 0));
+}
+
 .quiz__panel__button__label {
     border-color: var(--text-color-blue);
 }
@@ -2117,6 +2161,42 @@ if noTitle{
 .profile_comment_favorite__expand {
     border-color: var(--text-color-minor);
 }
+
+.thesis__spy_button.thesis__attach_something {
+    color: #26a69a;
+}
+
+.comment-unspy-button.is-active, .comment-unspy-button.is-active .material-icons {
+    color: var(--back-color-blue-button) !important;
+}
+
+.v-receipt__separator {
+    border-color: var(--text-color-gray);
+}
+
+.v-form-card__front, .v-form-card__back {
+    background-color: #181818;
+}
+
+.v-form-card__back {
+    border: none;
+}
+
+.v-form-card__back:after {
+    background-color: #333;
+}
+
+.v-form-card__back:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='302' height='13' fill='none' viewBox='0 0 302 13'%3E%3Cpath fill='%23232323' d='M291.935 12.3733c-5.388 0-9.487-2.69385-13.587-5.38769-4.099-2.69384-7.964-5.27055-13-5.27055-5.037 0-8.902 2.57671-13.001 5.27055-4.099 2.69384-8.199 5.38769-13.586 5.38769-5.388 0-9.487-2.69385-13.587-5.38769-4.099-2.69384-7.964-5.27055-13-5.27055s-8.902 2.57671-13.001 5.27055c-4.099 2.69384-8.199 5.38769-13.586 5.38769-5.388 0-9.487-2.69385-13.586-5.38769-4.1-2.69384-7.965-5.27055-13.001-5.27055s-8.902 2.57671-13.001 5.27055c-4.099 2.69384-8.198 5.38769-13.586 5.38769s-9.487-2.69385-13.586-5.38769c-4.1-2.69384-7.965-5.27055-13.001-5.27055s-8.9015 2.57671-13.0008 5.27055c-4.0993 2.69384-8.1987 5.38769-13.5863 5.38769-5.3877 0-9.487-2.69385-13.5863-5.38769-4.0993-2.69384-7.9644-5.27055-13.0007-5.27055s-8.9014 2.57671-13.0007 5.27055c-4.0993 2.69384-8.1986 5.38769-13.5863 5.38769-5.3877 0-9.487-2.69385-13.5863-5.38769C8.37928 4.29177 4.51422 1.71506-.522085 1.71506c-4.099315 0-7.378765 1.75685-10.424015 3.5137l-.4685-.81986C-8.36935 2.53493-4.85565.778076-.522085.778076 4.86559.778076 8.9649 3.47191 13.0642 6.16575c4.0993 2.69383 7.9644 5.27055 13.0007 5.27055s8.9014-2.57672 13.0007-5.27055C43.1649 3.47191 47.2642.778076 52.6519.778076c5.3877 0 9.487 2.693834 13.5863 5.387674 4.0993 2.69383 7.9644 5.27055 13.0007 5.27055s8.9013-2.57672 13.0007-5.27055C96.3389 3.47191 100.438.778076 105.826.778076s9.487 2.693834 13.586 5.387674c4.099 2.69383 7.965 5.27055 13.001 5.27055s8.901-2.57672 13.001-5.27055C149.513 3.47191 153.612.778076 159 .778076c5.387 0 9.487 2.693834 13.586 5.387674 4.099 2.69383 7.965 5.27055 13.001 5.27055s8.901-2.57672 13.001-5.27055c4.099-2.69384 8.198-5.387674 13.586-5.387674 5.387 0 9.487 2.693834 13.586 5.387674 4.099 2.69383 7.964 5.27055 13.001 5.27055 5.036 0 8.901-2.57672 13-5.27055 4.1-2.69384 8.199-5.387674 13.587-5.387674 5.387 0 9.487 2.693834 13.586 5.387674 4.099 2.69383 7.964 5.27055 13.001 5.27055 5.036 0 8.901-2.57672 13-5.27055 4.1-2.69384 8.199-5.387674 13.587-5.387674 4.333 0 7.847 1.756854 10.892 3.630824l-.468.81986c-2.928-1.87397-6.325-3.5137-10.424-3.5137-5.037 0-8.902 2.57671-13.001 5.27055-3.982 2.57671-8.199 5.38769-13.586 5.38769z'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='302' height='13' fill='none' viewBox='0 0 302 13'%3E%3Cpath fill='%23232323' d='M291.935 12.3733c-5.388 0-9.487-2.69385-13.587-5.38769-4.099-2.69384-7.964-5.27055-13-5.27055-5.037 0-8.902 2.57671-13.001 5.27055-4.099 2.69384-8.199 5.38769-13.586 5.38769-5.388 0-9.487-2.69385-13.587-5.38769-4.099-2.69384-7.964-5.27055-13-5.27055s-8.902 2.57671-13.001 5.27055c-4.099 2.69384-8.199 5.38769-13.586 5.38769-5.388 0-9.487-2.69385-13.586-5.38769-4.1-2.69384-7.965-5.27055-13.001-5.27055s-8.902 2.57671-13.001 5.27055c-4.099 2.69384-8.198 5.38769-13.586 5.38769s-9.487-2.69385-13.586-5.38769c-4.1-2.69384-7.965-5.27055-13.001-5.27055s-8.9015 2.57671-13.0008 5.27055c-4.0993 2.69384-8.1987 5.38769-13.5863 5.38769-5.3877 0-9.487-2.69385-13.5863-5.38769-4.0993-2.69384-7.9644-5.27055-13.0007-5.27055s-8.9014 2.57671-13.0007 5.27055c-4.0993 2.69384-8.1986 5.38769-13.5863 5.38769-5.3877 0-9.487-2.69385-13.5863-5.38769C8.37928 4.29177 4.51422 1.71506-.522085 1.71506c-4.099315 0-7.378765 1.75685-10.424015 3.5137l-.4685-.81986C-8.36935 2.53493-4.85565.778076-.522085.778076 4.86559.778076 8.9649 3.47191 13.0642 6.16575c4.0993 2.69383 7.9644 5.27055 13.0007 5.27055s8.9014-2.57672 13.0007-5.27055C43.1649 3.47191 47.2642.778076 52.6519.778076c5.3877 0 9.487 2.693834 13.5863 5.387674 4.0993 2.69383 7.9644 5.27055 13.0007 5.27055s8.9013-2.57672 13.0007-5.27055C96.3389 3.47191 100.438.778076 105.826.778076s9.487 2.693834 13.586 5.387674c4.099 2.69383 7.965 5.27055 13.001 5.27055s8.901-2.57672 13.001-5.27055C149.513 3.47191 153.612.778076 159 .778076c5.387 0 9.487 2.693834 13.586 5.387674 4.099 2.69383 7.965 5.27055 13.001 5.27055s8.901-2.57672 13.001-5.27055c4.099-2.69384 8.198-5.387674 13.586-5.387674 5.387 0 9.487 2.693834 13.586 5.387674 4.099 2.69383 7.964 5.27055 13.001 5.27055 5.036 0 8.901-2.57672 13-5.27055 4.1-2.69384 8.199-5.387674 13.587-5.387674 5.387 0 9.487 2.693834 13.586 5.387674 4.099 2.69383 7.964 5.27055 13.001 5.27055 5.036 0 8.901-2.57672 13-5.27055 4.1-2.69384 8.199-5.387674 13.587-5.387674 4.333 0 7.847 1.756854 10.892 3.630824l-.468.81986c-2.928-1.87397-6.325-3.5137-10.424-3.5137-5.037 0-8.902 2.57671-13.001 5.27055-3.982 2.57671-8.199 5.38769-13.586 5.38769z'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='302' height='13' fill='none' viewBox='0 0 302 13'%3E%3Cpath fill='%23232323' d='M291.935 12.3733c-5.388 0-9.487-2.69385-13.587-5.38769-4.099-2.69384-7.964-5.27055-13-5.27055-5.037 0-8.902 2.57671-13.001 5.27055-4.099 2.69384-8.199 5.38769-13.586 5.38769-5.388 0-9.487-2.69385-13.587-5.38769-4.099-2.69384-7.964-5.27055-13-5.27055s-8.902 2.57671-13.001 5.27055c-4.099 2.69384-8.199 5.38769-13.586 5.38769-5.388 0-9.487-2.69385-13.586-5.38769-4.1-2.69384-7.965-5.27055-13.001-5.27055s-8.902 2.57671-13.001 5.27055c-4.099 2.69384-8.198 5.38769-13.586 5.38769s-9.487-2.69385-13.586-5.38769c-4.1-2.69384-7.965-5.27055-13.001-5.27055s-8.9015 2.57671-13.0008 5.27055c-4.0993 2.69384-8.1987 5.38769-13.5863 5.38769-5.3877 0-9.487-2.69385-13.5863-5.38769-4.0993-2.69384-7.9644-5.27055-13.0007-5.27055s-8.9014 2.57671-13.0007 5.27055c-4.0993 2.69384-8.1986 5.38769-13.5863 5.38769-5.3877 0-9.487-2.69385-13.5863-5.38769C8.37928 4.29177 4.51422 1.71506-.522085 1.71506c-4.099315 0-7.378765 1.75685-10.424015 3.5137l-.4685-.81986C-8.36935 2.53493-4.85565.778076-.522085.778076 4.86559.778076 8.9649 3.47191 13.0642 6.16575c4.0993 2.69383 7.9644 5.27055 13.0007 5.27055s8.9014-2.57672 13.0007-5.27055C43.1649 3.47191 47.2642.778076 52.6519.778076c5.3877 0 9.487 2.693834 13.5863 5.387674 4.0993 2.69383 7.9644 5.27055 13.0007 5.27055s8.9013-2.57672 13.0007-5.27055C96.3389 3.47191 100.438.778076 105.826.778076s9.487 2.693834 13.586 5.387674c4.099 2.69383 7.965 5.27055 13.001 5.27055s8.901-2.57672 13.001-5.27055C149.513 3.47191 153.612.778076 159 .778076c5.387 0 9.487 2.693834 13.586 5.387674 4.099 2.69383 7.965 5.27055 13.001 5.27055s8.901-2.57672 13.001-5.27055c4.099-2.69384 8.198-5.387674 13.586-5.387674 5.387 0 9.487 2.693834 13.586 5.387674 4.099 2.69383 7.964 5.27055 13.001 5.27055 5.036 0 8.901-2.57672 13-5.27055 4.1-2.69384 8.199-5.387674 13.587-5.387674 5.387 0 9.487 2.693834 13.586 5.387674 4.099 2.69383 7.964 5.27055 13.001 5.27055 5.036 0 8.901-2.57672 13-5.27055 4.1-2.69384 8.199-5.387674 13.587-5.387674 4.333 0 7.847 1.756854 10.892 3.630824l-.468.81986c-2.928-1.87397-6.325-3.5137-10.424-3.5137-5.037 0-8.902 2.57671-13.001 5.27055-3.982 2.57671-8.199 5.38769-13.586 5.38769z'/%3E%3C/svg%3E") !important;
+}
+
+.v-form__legal a {
+    border-color: var(--text-color-blue) !important;
+}
+
+.v-form__legal a:hover {
+    border-color: var(--text-color-red) !important;
+}
 /******************************************************************/
 /* Messenger */
 .aside__header-button svg path,
@@ -2238,6 +2318,18 @@ if noTitle{
 
 .ui_modal_window__close:hover .icon {
     fill: var(--text-color-blue);
+}
+
+.island__social_links--type_1 .island__social_links__item__delete {
+    border: none;
+}
+.island__social_links--type_1 .island__social_links__item--active {
+    background-color: var(--text-color-blue) !important;
+    color: #000 !important;
+}
+
+.island__social_links--type_1 .island__social_links__item__delete .icon {
+    fill: #000 !important;
 }
 /* Vacancies */
 .v-button--blue:hover {
@@ -2417,6 +2509,21 @@ if alternativePost{
         width: 16px;
         height: 16px;
         margin-right: 5px;
+    }
+}
+
+if messagesScroll{
+    .chat-messages {
+        margin-right: 0 !important;
+    }
+}
+
+if likesBack{
+    .vote--content.vote--voted-positive .vote__button--plus:before,
+    .vote--content.vote--voted-negative .vote__button--minus:before,
+    .vote--content .vote__button--plus:hover:before,
+    .vote--content .vote__button--minus:hover:before {
+        background-color: transparent !important;
     }
 }
 }
@@ -2689,5 +2796,11 @@ html[stylus-iframe*="dtf.ru"] .Footer,
 html[stylus-iframe*="tjournal.ru"] .Footer,
 html[stylus-iframe*="vc.ru"] .Footer {
     border-color: var(--text-color-minor);
+}
+}
+
+@-moz-document url-prefix("https://api.dtf.ru/") {
+body {
+    color: var(--text-color-gray);
 }
 }
